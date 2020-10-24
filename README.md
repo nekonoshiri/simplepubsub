@@ -4,7 +4,7 @@ Simple Pub/Sub pattern implementation
 
 ## Usage
 
-```
+```Python
 from simplepubsub import Publisher
 
 
@@ -25,7 +25,7 @@ publisher.publish("will not be printed")
 
 Or you can use with `with` statement:
 
-```
+```Python
 from simplepubsub import Publisher
 
 
