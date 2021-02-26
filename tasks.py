@@ -1,26 +1,11 @@
 import invoke
 
 
-@invoke.task
-def lint(c):
-    c.run("isort .")
-    c.run("black .")
-    c.run("flake8")
-    c.run("mypy simplepubsub tests")
-    c.run("pydocstyle simplepubsub")
-
-
-@invoke.task
-def test(c):
+@invoke.task()
+def check(c):
+    """Run formatting, linting and testing."""
+    c.run("isort tinypubsub tests")
+    c.run("black tinypubsub tests")
+    c.run("flake8 tinypubsub tests")
+    c.run("mypy tinypubsub tests")
     c.run("pytest tests")
-
-
-@invoke.task
-def cov(c):
-    c.run("pytest --cov=simplepubsub --cov-branch tests")
-
-
-@invoke.task
-def docs(c):
-    c.run("sphinx-apidoc -f -o ./docs/autodoc simplepubsub")
-    c.run("make -C docs html")

@@ -14,7 +14,7 @@ class Subscription(ContextManager["Subscription"]):
 
     .. code-block:: python
 
-        from simplepubsub import Publisher
+        from tinypubsub import Publisher
 
 
         def subscriber(message):

@@ -1,6 +1,6 @@
 from typing import List
 
-from simplepubsub import Publisher
+from tinypubsub import Publisher
 
 
 class StubMessage:

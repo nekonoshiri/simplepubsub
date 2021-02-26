@@ -8,7 +8,7 @@
 
 .. code-block::
 
-    from simplepubsub import Publisher
+    from tinypubsub import Publisher
 
 
     def subscriber(message):
@@ -29,7 +29,7 @@
 
 .. code-block::
 
-    from simplepubsub import Publisher
+    from tinypubsub import Publisher
 
 
     def subscriber(message):
@@ -54,7 +54,7 @@
 
 .. code-block::
 
-    from simplepubsub import Publisher
+    from tinypubsub import Publisher
 
 
     def subscriber(message):
@@ -81,7 +81,7 @@
 
 .. code-block::
 
-    from simplepubsub import Publisher
+    from tinypubsub import Publisher
 
 
     def subscriber(message):
@@ -96,5 +96,5 @@
     publisher.publish("hi")  # 出力されない
 """
 
-from .publisher import Publisher
-from .subscription import Subscription
+from .publisher import Publisher as Publisher
+from .subscription import Subscription as Subscription

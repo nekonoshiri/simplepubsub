@@ -1,43 +1,38 @@
-# simplepubsub
+# tinypubsub
 
-Simple Pub/Sub pattern implementation
+[![PyPI](https://img.shields.io/pypi/v/tinypubsub)](https://pypi.org/project/tinypubsub/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tinypubsub)](https://pypi.org/project/tinypubsub/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![license](https://img.shields.io/github/license/nekonoshiri/tinypubsub)](https://github.com/nekonoshiri/tinypubsub/blob/main/LICENSE)
+
+Tiny pub-sub (observer) pattern implementation.
 
 ## Usage
 
 ```Python
-from simplepubsub import Publisher
+from tinypubsub.simple import SimplePublisher
 
+publisher = SimplePublisher()
 
-def subscriber(message):
-    print(message)
+subscription = publisher.subscribe(lambda message: print(message))
 
+publisher.publish("Hello!")
 
-publisher = Publisher()
-
-subscription = publisher.subscribe(subscriber)
-
-publisher.publish("will be printed")
-
-subscription.unsubscribe()
-
-publisher.publish("will not be printed")
+publisher.unsubscribe(subscription)
 ```
 
-Or you can use with `with` statement:
+Or:
 
 ```Python
-from simplepubsub import Publisher
+from tinypubsub.simple import SimplePublisher
 
+publisher = SimplePublisher()
 
-def subscriber(message):
-    print(message)
-
-
-publisher = Publisher()
-
-with publisher.subscribe(subscriber):
-    publisher.publish("will be printed")
-
-publisher.publish("will not be printed")
+with publisher.subscribe(lambda message: print(message)):
+    publisher.publish("Hello!")
 ```
+
+## API
+
+TODO
 
