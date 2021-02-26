@@ -94,7 +94,7 @@ Implementation of `Publisher[Message]`.
 
 Implementation of `Publisher[Message]`.
 
-This implementation uses WeakKeyDictionary instead of simple dictionary.
+This implementation uses WeakKeyDictionary to manage subscribers.
 This may prevent a memory leak if subscription loses any strong references before unsubscribed:
 
 ```Python
