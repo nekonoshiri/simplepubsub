@@ -35,8 +35,8 @@ with publisher.subscribe(lambda message: print(message)):
 ## Features
 
 - `tinypubsub.Publisher` has abstract methods: `publish`, `subscribe`, `unsubscribe`, `unsubscribe_all`.
-- `tinypubsub.simple.SimplePublisher`: Dict-based implementation of `Publish`.
-- `tinypubsub.weakref.WeakrefPublisher`: WeakKeyDictionary-based implementation of `Publish`.
+- `tinypubsub.simple.SimplePublisher`: Dict-based implementation of `Publisher`.
+- `tinypubsub.weakref.WeakrefPublisher`: WeakKeyDictionary-based implementation of `Publisher`.
 
 ## API
 
